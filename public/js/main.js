@@ -20,7 +20,7 @@ const getInfo = async (event) => {
         datahide.classList.add('data_hide')
     } else {
         try {
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&appid=20b0d5ac931fc213cb0f8c4df4d4d08d`
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&appid=${process.env.WEATHER_API_KEY}`
             const response = await fetch(url);
             const data = await response.json();
             const arrData = [data];

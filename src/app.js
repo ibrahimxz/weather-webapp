@@ -39,16 +39,6 @@ app.get('/weather', (req, res) => {
     res.render("weather")
 })
 
-// app.get('/weather', (req, res) => {
-//     requests(`https://api.openweathermap.org/data/2.5/weather?q=${req.query.name}&appid=20b0d5ac931fc213cb0f8c4df4d4d08d`)
-//         .on("data", (chunk) => {
-//             const objData = JSON.parse(chunk); // converting json to object data
-//             const arrData = [objData]          // converting obj data to array of objects
-//             console.log(`Location: ${arrData[0].name} temperature: ${arrData[0].main.temp}`)
-//             res.send(`Location: ${arrData[0].name} temperature: ${arrData[0].main.temp}`);
-//         });
-// });
-
 app.get('*', (req, res) => {
     res.render("404", {
         errorMsg: "Oops Page not found. Dont Cry !"
